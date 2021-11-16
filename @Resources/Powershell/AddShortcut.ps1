@@ -3,7 +3,9 @@ $Startpath = $env:APPDATA
 
 function Check {
     If (Test-Path -Path "$Startpath\Microsoft\Windows\Start Menu\Programs\Roundify Settings.lnk") {
-        $RmAPI.Bang('[!SetVariable ShortcutStart "1"]')
+        $RmAPI.Bang('[!SetOption MeterOtherSetting1Option1 MeterStyle "BottomBox:S | TrueStyleProg"]')
+        $RmAPI.Bang('[!UpdateMeter MeterOtherSetting1Option1]')
+        $RmAPI.Bang('[!Redraw]')
         $RmAPI.Log("Found: Roundify Settings in programs")
     } else {
         $RmAPI.Bang('[!SetVariable ShortcutStart "0"]')
