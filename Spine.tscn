@@ -1,0 +1,1026 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://Spine.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Close.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Ko-Fi.png" type="Texture" id=3]
+[ext_resource path="res://Assets/GitHub.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Discord.png" type="Texture" id=6]
+[ext_resource path="res://Assets/DeviantArt.png" type="Texture" id=7]
+[ext_resource path="res://themes/ButtonTheme.tres" type="Theme" id=8]
+[ext_resource path="res://Assets/Logo.png" type="Texture" id=9]
+[ext_resource path="res://Assets/optionsBG.png" type="Texture" id=10]
+[ext_resource path="res://Fonts/SegoeUI-VF.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Assets/Line.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Line2.png" type="Texture" id=13]
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+
+uniform float blur_amount : hint_range(0, 5);
+
+void fragment() {
+	COLOR = textureLod(SCREEN_TEXTURE, SCREEN_UV, blur_amount);
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+render_priority = 1
+shader = SubResource( 2 )
+shader_param/blur_amount = 5.0
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.152941, 0.152941, 0.152941, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.294118, 0.294118, 0.294118, 0.290196 )
+border_blend = true
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="Theme" id=22]
+Panel/styles/panel = SubResource( 21 )
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 0.184314, 0.184314, 0.184314, 1 )
+corner_radius_top_left = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="Theme" id=24]
+Panel/styles/panel = SubResource( 23 )
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=5]
+size = 45
+extra_spacing_top = -7
+font_data = ExtResource( 11 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 5 )
+RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
+RichTextLabel/colors/font_color_selected = Color( 0.49, 0.49, 0.49, 1 )
+RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+RichTextLabel/colors/selection_color = Color( 0.1, 0.1, 1, 0.8 )
+RichTextLabel/constants/line_separation = 1
+RichTextLabel/constants/shadow_as_outline = 0
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/table_hseparation = 3
+RichTextLabel/constants/table_vseparation = 3
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+RichTextLabel/styles/focus = null
+RichTextLabel/styles/normal = null
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = ExtResource( 11 )
+
+[sub_resource type="Theme" id=7]
+default_font = SubResource( 6 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="DynamicFont" id=8]
+size = 18
+font_data = ExtResource( 11 )
+
+[sub_resource type="Theme" id=9]
+default_font = SubResource( 8 )
+RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
+RichTextLabel/colors/font_color_selected = Color( 0.49, 0.49, 0.49, 1 )
+RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+RichTextLabel/colors/selection_color = Color( 0.396078, 0.396078, 1, 0.698039 )
+RichTextLabel/constants/line_separation = 1
+RichTextLabel/constants/shadow_as_outline = 0
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/table_hseparation = 3
+RichTextLabel/constants/table_vseparation = 3
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+RichTextLabel/styles/focus = null
+RichTextLabel/styles/normal = SubResource( 10 )
+
+[sub_resource type="ImageTexture" id=18]
+
+[sub_resource type="ImageTexture" id=19]
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.152941, 0.152941, 0.152941, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.294118, 0.294118, 0.294118, 0.290196 )
+border_blend = true
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 10
+
+[sub_resource type="Theme" id=12]
+WindowDialog/colors/title_color = Color( 0, 0, 0, 1 )
+WindowDialog/constants/close_h_ofs = 27
+WindowDialog/constants/close_v_ofs = -10
+WindowDialog/constants/scaleborder_size = 4
+WindowDialog/constants/title_height = 20
+WindowDialog/fonts/title_font = null
+WindowDialog/icons/close = SubResource( 18 )
+WindowDialog/icons/close_highlight = SubResource( 19 )
+WindowDialog/styles/panel = SubResource( 11 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.760784, 0.403922, 0.439216, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.294118, 0.294118, 0.294118, 0.294118 )
+border_blend = true
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.74902, 0.380392, 0.415686, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.294118, 0.294118, 0.294118, 0.294118 )
+border_blend = true
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.223529, 0.223529, 0.223529, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.294118, 0.294118, 0.294118, 0.294118 )
+border_blend = true
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="DynamicFont" id=16]
+size = 18
+font_data = ExtResource( 11 )
+
+[sub_resource type="Theme" id=17]
+default_font = SubResource( 16 )
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource( 13 )
+Button/styles/normal = SubResource( 14 )
+Button/styles/pressed = SubResource( 15 )
+
+[sub_resource type="Theme" id=20]
+WindowDialog/colors/title_color = Color( 0, 0, 0, 1 )
+WindowDialog/constants/close_h_ofs = 27
+WindowDialog/constants/close_v_ofs = -10
+WindowDialog/constants/scaleborder_size = 4
+WindowDialog/constants/title_height = 20
+WindowDialog/fonts/title_font = null
+WindowDialog/icons/close = ExtResource( 2 )
+WindowDialog/icons/close_highlight = ExtResource( 2 )
+WindowDialog/styles/panel = SubResource( 11 )
+
+[node name="Spine" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+material = SubResource( 3 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="Panel" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 22 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect2" type="Panel" parent="Control"]
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 191.0
+margin_bottom = -2.0
+theme = SubResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ExitButton" type="TextureButton" parent="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -27.0
+margin_top = 9.0
+margin_right = -10.0
+margin_bottom = 26.0
+theme = SubResource( 1 )
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = -342.0
+margin_right = -706.0
+margin_bottom = -318.0
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect4" type="TextureRect" parent="Control"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = -52.0
+margin_right = -707.0
+margin_bottom = -28.0
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+margin_left = 13.0
+margin_top = 13.0
+margin_right = 913.0
+margin_bottom = 913.0
+rect_scale = Vector2( 0.181, 0.181 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="GeneralButton" type="Button" parent="Control"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 24.0
+margin_top = -55.0
+margin_right = 164.0
+margin_bottom = -15.0
+rect_pivot_offset = Vector2( 124, 81 )
+focus_mode = 0
+theme = ExtResource( 8 )
+enabled_focus_mode = 0
+text = "General"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowsButton" type="Button" parent="Control"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 24.0
+margin_top = -6.0
+margin_right = 164.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 124, 81 )
+focus_mode = 0
+theme = ExtResource( 8 )
+enabled_focus_mode = 0
+text = "Windows"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DisplayButton" type="Button" parent="Control"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 24.0
+margin_top = 43.0
+margin_right = 164.0
+margin_bottom = 83.0
+rect_pivot_offset = Vector2( 124, 81 )
+focus_mode = 0
+theme = ExtResource( 8 )
+enabled_focus_mode = 0
+text = "Display"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AboutButton" type="Button" parent="Control"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 24.0
+margin_top = 93.0
+margin_right = 164.0
+margin_bottom = 133.0
+rect_pivot_offset = Vector2( 124, 81 )
+focus_mode = 0
+theme = ExtResource( 8 )
+enabled_focus_mode = 0
+text = "About"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeviantartButton" type="TextureButton" parent="Control"]
+anchor_right = 0.214
+anchor_bottom = 1.0
+margin_left = 28.0
+margin_top = 482.0
+margin_right = -134.604
+margin_bottom = -5.0
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GitHubButton" type="TextureButton" parent="Control"]
+anchor_right = 0.214
+anchor_bottom = 1.0
+margin_left = 57.0
+margin_top = 482.0
+margin_right = -105.604
+margin_bottom = -5.0
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ko-FiButton" type="TextureButton" parent="Control"]
+anchor_right = 0.214
+anchor_bottom = 1.0
+margin_left = 91.0
+margin_top = 482.0
+margin_right = -71.604
+margin_bottom = -5.0
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DiscordButton" type="TextureButton" parent="Control"]
+anchor_right = 0.214
+anchor_bottom = 1.0
+margin_left = 127.0
+margin_top = 482.0
+margin_right = -35.604
+margin_bottom = -5.0
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GeneralContainer" type="Control" parent="Control"]
+margin_left = 215.0
+margin_top = 19.0
+margin_right = 859.0
+margin_bottom = 499.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/GeneralContainer"]
+anchor_right = 1.0
+margin_top = 36.0
+margin_bottom = 91.0
+theme = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center]General[/center]"
+text = "General"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect5" type="TextureRect" parent="Control/GeneralContainer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 87.0
+margin_top = -396.0
+margin_right = -85.0
+margin_bottom = -376.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Control/GeneralContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -181.0
+margin_top = -127.0
+margin_right = 181.0
+margin_bottom = -75.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/GeneralContainer/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -166.5
+margin_top = -17.0
+margin_right = 166.5
+margin_bottom = 17.0
+theme = SubResource( 7 )
+bbcode_text = "Shortcuts"
+text = "Shortcuts"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="WindowsContainer" type="Control" parent="Control"]
+visible = false
+margin_left = 215.0
+margin_top = 19.0
+margin_right = 859.0
+margin_bottom = 499.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/WindowsContainer"]
+anchor_right = 1.0
+margin_top = 36.0
+margin_bottom = 91.0
+theme = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center]Windows[/center]"
+text = "Windows"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect4" type="TextureRect" parent="Control/WindowsContainer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 87.0
+margin_top = -396.0
+margin_right = -85.0
+margin_bottom = -376.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RadiusBG" type="TextureRect" parent="Control/WindowsContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -181.0
+margin_top = -127.0
+margin_right = 181.0
+margin_bottom = -75.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/WindowsContainer/RadiusBG"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -166.5
+margin_top = -17.0
+margin_right = 166.5
+margin_bottom = 17.0
+theme = SubResource( 7 )
+bbcode_text = "Radius"
+text = "Radius"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColourBG" type="TextureRect" parent="Control/WindowsContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -181.0
+margin_top = -68.0
+margin_right = 181.0
+margin_bottom = -16.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/WindowsContainer/ColourBG"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -166.5
+margin_top = -17.0
+margin_right = 166.5
+margin_bottom = 17.0
+theme = SubResource( 7 )
+bbcode_text = "Colour"
+text = "Colour"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="PaddingBG" type="TextureRect" parent="Control/WindowsContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -181.0
+margin_top = -9.0
+margin_right = 181.0
+margin_bottom = 43.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/WindowsContainer/PaddingBG"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -166.5
+margin_top = -17.0
+margin_right = 166.5
+margin_bottom = 17.0
+theme = SubResource( 7 )
+bbcode_text = "Padding"
+text = "Padding"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="DisplayContainer" type="Control" parent="Control"]
+visible = false
+margin_left = 215.0
+margin_top = 19.0
+margin_right = 859.0
+margin_bottom = 499.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/DisplayContainer"]
+anchor_right = 1.0
+margin_top = 36.0
+margin_bottom = 91.0
+theme = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center]Display[/center]"
+text = "Display"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="Control/DisplayContainer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 87.0
+margin_top = -396.0
+margin_right = -85.0
+margin_bottom = -376.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="FullscreenCornersBG" type="TextureRect" parent="Control/DisplayContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -181.0
+margin_top = -127.0
+margin_right = 181.0
+margin_bottom = -75.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/DisplayContainer/FullscreenCornersBG"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -166.5
+margin_top = -17.0
+margin_right = 166.5
+margin_bottom = 17.0
+theme = SubResource( 7 )
+bbcode_text = "Fullscreen Corners"
+text = "Fullscreen Corners"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColourBG" type="TextureRect" parent="Control/DisplayContainer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -181.0
+margin_top = -68.0
+margin_right = 181.0
+margin_bottom = -16.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/DisplayContainer/ColourBG"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -166.5
+margin_top = -17.0
+margin_right = 166.5
+margin_bottom = 17.0
+theme = SubResource( 7 )
+bbcode_text = "???"
+text = "???"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PaddingBG" type="TextureRect" parent="Control/DisplayContainer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -181.0
+margin_top = -9.0
+margin_right = 181.0
+margin_bottom = 43.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/DisplayContainer/PaddingBG"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -166.5
+margin_top = -17.0
+margin_right = 166.5
+margin_bottom = 17.0
+theme = SubResource( 7 )
+bbcode_text = "???"
+text = "???"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AboutContainer" type="Control" parent="Control"]
+visible = false
+margin_left = 215.0
+margin_top = 19.0
+margin_right = 859.0
+margin_bottom = 499.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/AboutContainer"]
+anchor_right = 1.0
+margin_top = 36.0
+margin_bottom = 91.0
+theme = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center]About[/center]"
+text = "About"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect5" type="TextureRect" parent="Control/AboutContainer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 87.0
+margin_top = -396.0
+margin_right = -85.0
+margin_bottom = -376.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/AboutContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -193.0
+margin_top = -132.0
+margin_right = 204.0
+margin_bottom = 132.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/AboutContainer/ScrollContainer"]
+margin_right = 386.0
+margin_bottom = 468.0
+rect_min_size = Vector2( 386, 264 )
+focus_mode = 2
+theme = SubResource( 9 )
+bbcode_enabled = true
+bbcode_text = "[center]Roundify is an application/skin built for Rainmeter that allows the user to change the corner radius of their display. Roundify allows for a high level of customizability and we're just getting started with it.
+
+Roundify utilizes Rainmeter to create rounded edges to your screen and/or windows. I decided to use Rainmeter as it seemed like a very versatile program to write in and allowed me to very quickly create something out of nothing.
+
+This is however my first time programming a Rainmeter program so there was a lot to learn. Rainmeter does have a very strong and helpful community that helped me along the way and I'll give special thanks to those here."
+text = "Roundify is an application/skin built for Rainmeter that allows the user to change the corner radius of their display. Roundify allows for a high level of customizability and we're just getting started with it.
+
+Roundify utilizes Rainmeter to create rounded edges to your screen and/or windows. I decided to use Rainmeter as it seemed like a very versatile program to write in and allowed me to very quickly create something out of nothing.
+
+This is however my first time programming a Rainmeter program so there was a lot to learn. Rainmeter does have a very strong and helpful community that helped me along the way and I'll give special thanks to those here."
+fit_content_height = true
+scroll_active = false
+selection_enabled = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Control/AboutContainer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 87.0
+margin_top = -101.0
+margin_right = -85.0
+margin_bottom = -81.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="UpdateButton" type="Button" parent="Control/AboutContainer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -150.0
+margin_top = -76.0
+margin_right = -10.0
+margin_bottom = -36.0
+rect_pivot_offset = Vector2( 124, 81 )
+focus_mode = 0
+theme = ExtResource( 8 )
+enabled_focus_mode = 0
+text = "Updates"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="Control/AboutContainer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -76.0
+margin_right = 150.0
+margin_bottom = -36.0
+rect_pivot_offset = Vector2( 124, 81 )
+focus_mode = 0
+theme = ExtResource( 8 )
+custom_colors/font_color = Color( 0.74902, 0.380392, 0.415686, 1 )
+custom_colors/font_color_hover = Color( 0.74902, 0.380392, 0.415686, 1 )
+enabled_focus_mode = 0
+text = "Quit"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmationDialog" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -281.5
+margin_top = -142.5
+margin_right = 281.5
+margin_bottom = 142.5
+theme = SubResource( 12 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmationDialog"]
+anchor_right = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = 222.0
+theme = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center]Confirm"
+text = "Confirm"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="ConfirmationDialog"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -203.0
+margin_top = 58.0
+margin_right = 203.0
+margin_bottom = 78.0
+texture = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect4" type="TextureRect" parent="ConfirmationDialog"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -203.0
+margin_top = -87.0
+margin_right = 203.0
+margin_bottom = -67.0
+texture = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="ConfirmationDialog"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -192.5
+margin_top = -71.0
+margin_right = 192.5
+margin_bottom = 59.0
+theme = SubResource( 9 )
+bbcode_enabled = true
+bbcode_text = "[center]You are about to disable Roundify. Notice this is a reversable action. You can open this app again to re-enable roundify.
+
+Do you want to Quit Roundify."
+text = "You are about to disable Roundify. Notice this is a reversable action. You can open this app again to re-enable roundify.
+
+Do you want to Quit Roundify."
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="UpdateButton2" type="Button" parent="ConfirmationDialog"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -150.0
+margin_top = -61.0
+margin_right = -10.0
+margin_bottom = -21.0
+rect_pivot_offset = Vector2( 124, 81 )
+focus_mode = 0
+theme = ExtResource( 8 )
+enabled_focus_mode = 0
+text = "Cancel"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="UpdateButton3" type="Button" parent="ConfirmationDialog"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -61.0
+margin_right = 150.0
+margin_bottom = -21.0
+rect_pivot_offset = Vector2( 124, 81 )
+focus_mode = 0
+theme = SubResource( 17 )
+enabled_focus_mode = 0
+text = "Quit"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="UpdaterWindow" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -357.5
+margin_top = -201.5
+margin_right = 357.5
+margin_bottom = 201.5
+theme = SubResource( 20 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Control/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="Control/GeneralButton" to="." method="_on_GeneralButton_pressed"]
+[connection signal="pressed" from="Control/WindowsButton" to="." method="_on_WindowsButton_pressed"]
+[connection signal="pressed" from="Control/DisplayButton" to="." method="_on_DisplayButton_pressed"]
+[connection signal="pressed" from="Control/AboutButton" to="." method="_on_AboutButton_pressed"]
+[connection signal="pressed" from="Control/DeviantartButton" to="." method="_on_DeviantartButton_pressed"]
+[connection signal="pressed" from="Control/AboutContainer/UpdateButton" to="." method="_on_UpdateButton_pressed"]
+[connection signal="pressed" from="Control/AboutContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="ConfirmationDialog/UpdateButton2" to="." method="_on_UpdateButton2_pressed"]
